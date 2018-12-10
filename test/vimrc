@@ -1,0 +1,5 @@
+" vimrc
+
+set nocompatible  " be iMproved
+
+set rtp+=$VIMPATH/vader
