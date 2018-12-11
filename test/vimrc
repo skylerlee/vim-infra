@@ -2,4 +2,4 @@
 
 set nocompatible  " be iMproved
 
-set rtp+=$VIMPATH/vader
+set rtp+=$VIMPATH/vader.vim
