@@ -1,2 +1,2 @@
 Execute (Basic tests):
-  AssertEqual 'aaa', 'bbb'
+  runtime test/infra.spec.vim
