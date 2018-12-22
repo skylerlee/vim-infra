@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-vim -u test/vimrc +Vader! test/**/*.vader
+vim -esu test/vimrc -c '+Vader! test/**/*.vader -q'
