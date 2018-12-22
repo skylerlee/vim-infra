@@ -7,15 +7,7 @@ if !exists('g:infra_root')
   let g:infra_root = expand('$HOME')
 endif
 
-function infra#join_path(base, ...)
-  let path = a:base
-  for seg in a:000
-    let path .= '/' . seg
-  endfor
-  return path
-endfunction
-
 function infra#require(path)
-  let target = infra#join_path(g:infra_root, a:path)
+  let target = infra#path#join(g:infra_root, a:path)
   execute 'source ' . target
 endfunction

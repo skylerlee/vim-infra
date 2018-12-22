@@ -1,2 +1,2 @@
-Execute (Basic tests):
-  runtime test/infra.spec.vim
+Execute (Test basic functions):
+  call infra#require('test/target.vim')

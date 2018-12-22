@@ -1,0 +1,2 @@
+Execute (Test path joining):
+  AssertEqual 'a/b', infra#path#join('a', 'b')
