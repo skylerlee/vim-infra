@@ -1,2 +1,7 @@
 Execute (Test path joining):
   AssertEqual 'a/b', infra#path#join('a', 'b')
+  AssertEqual 'a/b/c', infra#path#join('a', 'b', 'c')
+  AssertEqual 'a/b/c', infra#path#join('a/', '/b/', 'c/')
+  AssertEqual '/a/b/c', infra#path#join('/a/', '/b', '/c/')
+  AssertEqual '/a/b/c', infra#path#join('/', 'a/b', 'c/')
+  AssertEqual '/a/b//c', infra#path#join('/a', '/b//c/')
