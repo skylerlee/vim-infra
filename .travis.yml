@@ -6,4 +6,4 @@ before_script: |
   git clone https://github.com/junegunn/vader.vim.git
 
 script: |
-  vim -esu test/vimrc -c '+Vader! test/**/*.vader -q'
+  vim -esu test/vimrc -c '+Vader! test/**/*.vader -q' > /dev/null
