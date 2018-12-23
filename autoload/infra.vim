@@ -7,7 +7,7 @@ if !exists('g:infra_root')
   let g:infra_root = expand('$HOME')
 endif
 
-function infra#require(path)
+function infra#require(path) abort
   let target = infra#path#join(g:infra_root, a:path)
   execute 'source ' . target
 endfunction

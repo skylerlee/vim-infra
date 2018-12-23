@@ -5,7 +5,7 @@
 
 let s:sep = '/'
 
-function infra#path#join(base, ...)
+function infra#path#join(base, ...) abort
   let path = s:trim_end(a:base, s:sep)
   for seg in a:000
     let path .= '/' . s:trim(seg, s:sep)
