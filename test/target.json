@@ -1,0 +1,13 @@
+{
+  "name": "target.json",
+  "foo": "bar",
+  "bar": 120,
+  "baz": true,
+  "qux": null,
+  "list": [0, 2, 4, 8],
+  "dict": {
+    "a": 1,
+    "b": 3,
+    "c": 7
+  }
+}

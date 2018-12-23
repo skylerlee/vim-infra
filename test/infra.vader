@@ -3,3 +3,6 @@ Execute (Test require function):
   call infra#require('test/target.vim')
   Assert g:loaded_test_target
   AssertEqual 'bar', TargetFuncFoo()
+
+Execute (Test load_json function):
+  let s:data = infra#load_json('test/target.json')
