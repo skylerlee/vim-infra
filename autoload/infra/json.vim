@@ -10,3 +10,13 @@ endfunction
 function infra#json#encode(val) abort
   return '{}'
 endfunction
+
+" --- JSON decoding ---
+
+function s:parse()
+endfunction
+
+" --- JSON encoding ---
+
+function s:encode()
+endfunction
