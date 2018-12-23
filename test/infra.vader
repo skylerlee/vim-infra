@@ -1,2 +1,5 @@
-Execute (Test basic functions):
+Execute (Test require function):
+  let g:infra_root=$PWD
   call infra#require('test/target.vim')
+  Assert g:loaded_test_target
+  AssertEqual 'bar', TargetFuncFoo()
