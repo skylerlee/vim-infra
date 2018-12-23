@@ -4,7 +4,9 @@
 " found in the LICENSE file.
 
 function infra#json#decode(str) abort
+  return {}
 endfunction
 
 function infra#json#encode(val) abort
+  return '{}'
 endfunction
