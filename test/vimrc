@@ -2,5 +2,7 @@
 
 set nocompatible  " be iMproved
 
+let $VIM_DIR = expand('<sfile>:p:h:h')
+
 set rtp+=$VIMPATH/vader.vim
-set rtp+=$PWD
+set rtp+=$VIM_DIR
