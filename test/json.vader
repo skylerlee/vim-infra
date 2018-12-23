@@ -1,0 +1,7 @@
+Execute (Test json encoding):
+  let s:data = { 'a': 'foo', 'b': 'bar' }
+  let s:json = infra#json#encode(s:data)
+
+Execute (Test json decoding):
+  let s:json = '{ "a": "foo", "b": "bar" }'
+  let s:data = infra#json#decode(s:json)

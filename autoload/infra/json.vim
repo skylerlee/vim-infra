@@ -3,8 +3,8 @@
 " Use of this source code is governed by the MIT license that can be
 " found in the LICENSE file.
 
-function infra#json#decode()
+function infra#json#decode(str) abort
 endfunction
 
-function infra#json#encode()
+function infra#json#encode(val) abort
 endfunction
