@@ -4,11 +4,11 @@
 " found in the LICENSE file.
 
 function infra#json#decode(str) abort
-  return {}
+  return json_decode(a:str)
 endfunction
 
 function infra#json#encode(val) abort
-  return '{}'
+  return json_encode(a:val)
 endfunction
 
 " --- JSON decoding ---
@@ -18,5 +18,5 @@ endfunction
 
 " --- JSON encoding ---
 
-function s:encode()
+function s:stringify()
 endfunction

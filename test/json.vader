@@ -1,7 +1,10 @@
 Execute (Test json encoding):
-  let s:data = { 'a': 'foo', 'b': 'bar' }
-  let s:json = infra#json#encode(s:data)
+  let g:data = { 'a': 'foo', 'b': 'bar' }
+  let g:json = infra#json#encode(g:data)
+  AssertEqual '{"a":"foo","b":"bar"}', g:json
 
 Execute (Test json decoding):
-  let s:json = '{ "a": "foo", "b": "bar" }'
-  let s:data = infra#json#decode(s:json)
+  let g:json = '{ "a": "foo", "b": "bar" }'
+  let g:data = infra#json#decode(g:json)
+  AssertEqual 'foo', g:data.a
+  AssertEqual 'bar', g:data.b

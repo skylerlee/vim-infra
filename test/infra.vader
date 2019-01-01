@@ -5,4 +5,13 @@ Execute (Test require function):
   AssertEqual 'bar', TargetFuncFoo()
 
 Execute (Test load_json function):
-  let s:data = infra#load_json('test/target.json')
+  let g:data = infra#load_json('test/target.json')
+  AssertEqual 'target.json', g:data.name
+  AssertEqual 'bar', g:data.foo
+  AssertEqual 120, g:data.bar
+  AssertEqual v:true, g:data.baz
+  AssertEqual v:null, g:data.qux
+  AssertEqual 0, g:data.list[0]
+  AssertEqual 8, g:data.list[3]
+  AssertEqual 1, g:data.dict.a
+  AssertEqual 7, g:data.dict.c
