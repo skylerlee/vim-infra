@@ -14,6 +14,6 @@ endfunction
 
 function infra#load_json(path) abort
   let target = infra#path#join(g:infra_root, a:path)
-  let buffer = join(readfile(target), '\n')
+  let buffer = join(readfile(target))
   return infra#json#decode(buffer)
 endfunction
