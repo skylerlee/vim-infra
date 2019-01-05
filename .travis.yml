@@ -1,4 +1,5 @@
 language: vim
+dist: xenial
 env:
   - VIMPATH=$PWD
 
