@@ -3,6 +3,10 @@ dist: xenial
 env:
   - VIMPATH=$PWD
 
+before_install: |
+  sudo apt-get update
+  sudo apt-get install -y vim
+
 before_script: |
   git clone https://github.com/junegunn/vader.vim.git
 
