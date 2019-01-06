@@ -1,14 +1,6 @@
-language: vim
-dist: xenial
-env:
-  - VIMPATH=$PWD
-
-before_install: |
-  sudo apt-get update
-  sudo apt-get install -y vim
-
-before_script: |
-  git clone https://github.com/junegunn/vader.vim.git
-
-script: |
-  vim -u test/vimrc -c '+Vader! test/**/*.vader -q' > /dev/null
+language: generic
+services:
+  - docker
+before_install:
+  - docker pull testbed/vim
+  - docker run testbed/vim /bin/sh -c "install_vim -tag master -build"
