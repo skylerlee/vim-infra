@@ -2,7 +2,12 @@ language: generic
 services:
   - docker
 before_install:
-  - docker pull testbed/vim
-  - docker run testbed/vim install_vim -tag master -name vim-master -build
+  - docker pull skylerlee/vim-testbed
+jobs:
+  include:
+    - env: VIM=vim73
+    - env: VIM=vim74
+    - env: VIM=vim8
+    - env: VIM=vim-latest
 script:
-  - docker run -it --rm testbed/vim vim-master --version
+  - docker run -it --rm skylerlee/vim-testbed $VIM --version
