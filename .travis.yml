@@ -10,4 +10,4 @@ jobs:
     - env: VIM=vim8
     - env: VIM=vim-latest
 script:
-  - docker run -it --rm skylerlee/vim-testbed $VIM --version
+  - docker run -it --rm skylerlee/vim-testbed $VIM -u test/vimrc -c '+Vader! test/**/*.vader'
