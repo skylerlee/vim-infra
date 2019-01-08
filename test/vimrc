@@ -1,8 +1,10 @@
 " vimrc
 
-set nocompatible  " be iMproved
+filetype off
 
 let $VIM_DIR = expand('<sfile>:p:h:h')
-
-set rtp+=$VIMPATH/vader.vim
 set rtp+=$VIM_DIR
+set rtp+=$VIM_DIR/.cache/vader.vim
+
+filetype plugin indent on
+syntax enable

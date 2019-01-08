@@ -14,7 +14,4 @@ before_script:
 script:
   - |
     docker run -it --rm -v $PWD:/testplugin skylerlee/vim-testbed \
-    $VIM -Nu <(cat << VIMRC
-    set rtp+=.
-    set rtp+=.cache/vader.vim
-    VIMRC) -c '+Vader! test/**/*.vader'
+    $VIM -Nu test/vimrc -c '+Vader! test/**/*.vader'
