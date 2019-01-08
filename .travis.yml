@@ -10,10 +10,11 @@ jobs:
     - env: VIM=vim8
     - env: VIM=vim-latest
 before_script:
-  - git clone https://github.com/junegunn/vader.vim.git cache/vader.vim
+  - git clone https://github.com/junegunn/vader.vim.git .cache/vader.vim
 script:
   - |
-    docker run -it --rm \
-    -v $PWD:/testplugin \
-    skylerlee/vim-testbed \
-    $VIM -u test/vimrc -c '+Vader! test/**/*.vader'
+    docker run -it --rm -v $PWD:/testplugin skylerlee/vim-testbed \
+    $VIM -Nu <(cat << VIMRC
+    set rtp+=.
+    set rtp+=.cache/vader.vim
+    VIMRC) -c '+Vader! test/**/*.vader'
