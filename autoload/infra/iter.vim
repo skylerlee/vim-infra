@@ -4,6 +4,9 @@
 " found in the LICENSE file.
 
 function infra#iter#list(list, fn) abort
+  for item in a:list
+    call a:fn(item)
+  endfor
 endfunction
 
 function infra#iter#dict(dict, fn) abort
