@@ -9,3 +9,14 @@ Execute (Test list iteration):
   AssertEqual 10, g:sum
 
 Execute (Test dict iteration):
+  let g:str = ''
+  let g:sum = 0
+
+  function s:accumulate(key, value)
+    let g:str .= a:key
+    let g:sum += a:value
+  endfunction
+
+  call infra#iter#dict({ 'a': 4, 'b': 5, 'c': 6 }, function('s:accumulate'))
+  AssertEqual 'abc', g:str
+  AssertEqual 15, g:sum
