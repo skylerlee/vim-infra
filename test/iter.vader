@@ -1,3 +1,11 @@
 Execute (Test list iteration):
+  let g:sum = 0
+
+  function s:accumulate(n)
+    let g:sum += a:n
+  endfunction
+
+  call infra#iter#list([1, 2, 3, 4], function('s:accumulate'))
+  AssertEqual 10, g:sum
 
 Execute (Test dict iteration):
