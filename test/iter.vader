@@ -1,7 +1,7 @@
 Execute (Test list iteration):
   let g:sum = 0
 
-  function s:accumulate(n)
+  function! s:accumulate(n)
     let g:sum += a:n
   endfunction
 
@@ -12,7 +12,7 @@ Execute (Test dict iteration):
   let g:str = ''
   let g:sum = 0
 
-  function s:accumulate(key, value)
+  function! s:accumulate(key, value)
     let g:str .= a:key
     let g:sum += a:value
   endfunction
