@@ -3,17 +3,13 @@
 " Use of this source code is governed by the MIT license that can be
 " found in the LICENSE file.
 
-if !exists('g:infra_root')
-  let g:infra_root = expand('$HOME')
-endif
-
 function infra#require(path) abort
-  let target = infra#path_join(g:infra_root, a:path)
+  let target = infra#path_resolve(a:path)
   execute 'source ' . target
 endfunction
 
 function infra#load_json(path) abort
-  let target = infra#path_join(g:infra_root, a:path)
+  let target = infra#path_resolve(a:path)
   let buffer = join(readfile(target))
   return json_decode(buffer)
 endfunction
@@ -23,6 +19,14 @@ endfunction
 " ================================================================
 
 let s:sep = '/'
+
+if !exists('g:infra_path_root')
+  let g:infra_path_root = expand('$HOME')
+endif
+
+function infra#path_resolve(...) abort
+  return call('infra#path_join', [g:infra_path_root] + a:000)
+endfunction
 
 function infra#path_join(base, ...) abort
   let path = s:trim_end(a:base, s:sep)
