@@ -4,7 +4,7 @@
 " found in the LICENSE file.
 
 " ================================================================
-" base
+" base functions
 " ================================================================
 
 function infra#require(path) abort
@@ -19,7 +19,7 @@ function infra#load_json(path) abort
 endfunction
 
 " ================================================================
-" path
+" path manipulating functions
 " ================================================================
 
 let s:sep = '/'
@@ -59,7 +59,7 @@ function s:trim(str, char)
 endfunction
 
 " ================================================================
-" iter
+" collection iteration functions
 " ================================================================
 
 function infra#iter_list(list, fn) abort
