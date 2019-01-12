@@ -8,12 +8,60 @@ if !exists('g:infra_root')
 endif
 
 function infra#require(path) abort
-  let target = infra#path#join(g:infra_root, a:path)
+  let target = infra#path_join(g:infra_root, a:path)
   execute 'source ' . target
 endfunction
 
 function infra#load_json(path) abort
-  let target = infra#path#join(g:infra_root, a:path)
+  let target = infra#path_join(g:infra_root, a:path)
   let buffer = join(readfile(target))
   return json_decode(buffer)
+endfunction
+
+" ================================================================
+" path
+" ================================================================
+
+let s:sep = '/'
+
+function infra#path_join(base, ...) abort
+  let path = s:trim_end(a:base, s:sep)
+  for seg in a:000
+    let path .= '/' . s:trim(seg, s:sep)
+  endfor
+  return path
+endfunction
+
+function s:trim_start(str, char)
+  if a:str[0] ==# a:char
+    return a:str[1:]
+  endif
+  return a:str
+endfunction
+
+function s:trim_end(str, char)
+  if a:str[-1:] ==# a:char
+    return a:str[:-2]
+  endif
+  return a:str
+endfunction
+
+function s:trim(str, char)
+  return s:trim_end(s:trim_start(a:str, a:char), a:char)
+endfunction
+
+" ================================================================
+" iter
+" ================================================================
+
+function infra#iter_list(list, fn) abort
+  for item in a:list
+    call a:fn(item)
+  endfor
+endfunction
+
+function infra#iter_dict(dict, fn) abort
+  for item in items(a:dict)
+    call a:fn(item[0], item[1])
+  endfor
 endfunction
