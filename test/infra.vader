@@ -1,5 +1,5 @@
 Execute (Test require function):
-  let g:infra_root = $VIM_DIR
+  let g:infra_path_root = $VIM_DIR
   call infra#require('test/target.vim')
   Assert g:loaded_test_target
   AssertEqual 'bar', TargetFuncFoo()
