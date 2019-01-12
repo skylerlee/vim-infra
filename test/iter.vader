@@ -5,7 +5,7 @@ Execute (Test list iteration):
     let g:sum += a:n
   endfunction
 
-  call infra#iter#list([1, 2, 3, 4], function('s:accumulate'))
+  call infra#iter_list([1, 2, 3, 4], function('s:accumulate'))
   AssertEqual 10, g:sum
 
 Execute (Test dict iteration):
@@ -17,6 +17,6 @@ Execute (Test dict iteration):
     let g:sum += a:value
   endfunction
 
-  call infra#iter#dict({ 'a': 4, 'b': 5, 'c': 6 }, function('s:accumulate'))
+  call infra#iter_dict({ 'a': 4, 'b': 5, 'c': 6 }, function('s:accumulate'))
   AssertEqual 'abc', g:str
   AssertEqual 15, g:sum
