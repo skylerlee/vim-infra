@@ -1,3 +1,8 @@
+Execute (Test path resolving):
+  let g:infra_path_root = '~/foo'
+  AssertEqual '~/foo/a', infra#path_resolve('a')
+  AssertEqual '~/foo/a/b/c', infra#path_resolve('a', 'b', 'c')
+
 Execute (Test path joining):
   AssertEqual 'a/b', infra#path_join('a', 'b')
   AssertEqual 'a/b/c', infra#path_join('a', 'b', 'c')
