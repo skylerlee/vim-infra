@@ -3,6 +3,10 @@
 " Use of this source code is governed by the MIT license that can be
 " found in the LICENSE file.
 
+" ================================================================
+" base
+" ================================================================
+
 function infra#require(path) abort
   let target = infra#path_resolve(a:path)
   execute 'source ' . target
