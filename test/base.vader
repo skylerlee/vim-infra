@@ -15,3 +15,9 @@ Execute (Test load_json function):
   AssertEqual 8, g:data.list[3]
   AssertEqual 1, g:data.dict.a
   AssertEqual 7, g:data.dict.c
+
+Execute (Test eval function):
+  let g:varname = 'foo'
+  call infra#eval("let g:%s = 'bar'", g:varname)
+  Assert exists('g:foo')
+  AssertEqual 'bar', g:foo
