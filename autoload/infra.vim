@@ -19,8 +19,7 @@ function infra#load_json(path) abort
 endfunction
 
 function infra#eval(...) abort
-  let command = call('printf', a:000)
-  execute command
+  execute call('printf', a:000)
 endfunction
 
 " ================================================================
